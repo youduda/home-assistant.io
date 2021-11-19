@@ -30,7 +30,7 @@ MQTT (aka MQ Telemetry Transport) is a machine-to-machine or "Internet of Things
 
 Your first step to get MQTT and Home Assistant working is to choose a [broker](/docs/mqtt/broker).
 
-**Note:** If you use TLS or WebSocket, then manual configuration (see below) is currently the only option.
+**Note:** If you use TLS, then manual configuration (see below) is currently the only option.
 
 {% include integrations/config_flow.md %}
 
@@ -64,18 +64,6 @@ mqtt:
   certificate: "PATH_TO_CA.crt"
   broker: "IP_ADDRESS_BROKER"
   port: 8883
-```
-
-If your broker uses MQTT over WebSocket, specify `transport: websockets` and optionally `ws_path` and `ws_headers` to control the handshake:
-
-```yaml
-# Example configuration.yaml entry
-mqtt:
-  broker: "IP_ADDRESS_BROKER"
-  transport: websockets
-  ws_path: "/mqtt"
-  headers:
-    authorization: Bearer <token>
 ```
 
 The version of the MQTT protocol can be changed through the `protocol` attribute.
